@@ -1,0 +1,15 @@
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\bin\Debug\net6.0\CakeOrder.exe
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\bin\Debug\net6.0\CakeOrder.deps.json
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\bin\Debug\net6.0\CakeOrder.runtimeconfig.json
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\bin\Debug\net6.0\CakeOrder.dll
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\bin\Debug\net6.0\CakeOrder.pdb
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.csproj.AssemblyReference.cache
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.AssemblyInfoInputs.cache
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.AssemblyInfo.cs
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.csproj.CoreCompileInputs.cache
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.dll
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\refint\CakeOrder.dll
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.pdb
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\CakeOrder.genruntimeconfig.cache
+C:\Users\ogani\RiderProjects\CakeOrder\CakeOrder\obj\Debug\net6.0\ref\CakeOrder.dll
