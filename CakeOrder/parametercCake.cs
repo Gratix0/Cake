@@ -44,7 +44,59 @@ internal class ParametersCake
         
     }
 
+    public static void tasteOfCakes()
+    {
+        Console.Clear();
+        Console.SetCursorPosition(0,0);
+            
+        Console.WriteLine("Press Esc to exit");
+        Console.WriteLine("Choose menu item:\n--------");
 
+        Console.WriteLine("  Vanilla - 2$");
+        Console.WriteLine("  Chocolate - 3$");
+        Console.WriteLine("  Caramel - 3$");
+        Console.WriteLine("  Berry - 5$");
+        Console.WriteLine("  Coconut - 6$");
+    }
 
+    public static void layers()
+    {
+        Console.Clear();
+        Console.SetCursorPosition(0,0);
+            
+        Console.WriteLine("Press Esc to exit");
+        Console.WriteLine("Choose menu item:\n--------");
 
+        Console.WriteLine("  1 Korzh - 2$");
+        Console.WriteLine("  2 Korzh - 4$");
+        Console.WriteLine("  3 Korzh - 6$");
+        Console.WriteLine("  4 Korzh - 7$");
+        Console.WriteLine("  5 Korzh - 8$");
+    }
+
+    public static void glaze()
+    {
+        Console.Clear();
+        Console.SetCursorPosition(0,0);
+            
+        Console.WriteLine("Press Esc to exit");
+        Console.WriteLine("Choose menu item:\n--------");
+
+        Console.WriteLine("  Yes - 2$");
+        Console.WriteLine("  No - 0$");
+    }
+
+    public static void decor()
+    {
+        Console.Clear();
+        Console.SetCursorPosition(0,0);
+            
+        Console.WriteLine("Press Esc to exit");
+        Console.WriteLine("Choose menu item:\n--------");
+
+        Console.WriteLine("  Chocolate - 1$");
+        Console.WriteLine("  Berry - 2$");
+        Console.WriteLine("  Cosmostars - 5$");
+        Console.WriteLine("  Vanila - 8$");
+    }
 }
