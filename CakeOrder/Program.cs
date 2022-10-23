@@ -1,7 +1,14 @@
 ﻿  using CakeOrder;
+  using System.IO;
 
   int pos = 3;
-  string[] CakePar = new[] {"", "", "", "", "", ""};
+  string[] CakePar = new[] { "", "", "", "", "", "" };
+  string CakeParForFile = null;
+  DateTime dateTime = DateTime.Now;
+  bool second = false;
+  
+
+
   void Menu()
  {
      Console.WriteLine("Order cakes in Tsybulko. Plenty of cakes for you to choose from\nChoise you cake\n---------------------------------------------------------------");
@@ -22,539 +29,586 @@
      {
          Console.WriteLine(CakePar[i]);
      }
-     
  }
-  void Cl()
+
+  int i;
+ void Cl()
   {
       Console.SetCursorPosition(0, 0);
       Console.Clear();
   }
 
-  while (true)
+  do
   {
-      Cl();
-      Menu();
-      Console.SetCursorPosition(0, pos);
-      Console.WriteLine("->");
-
-      ConsoleKeyInfo key = Console.ReadKey();
-
-      if (key.Key == ConsoleKey.UpArrow && pos >= 4)
+      while (true)
       {
-          if (pos == 10)
+          Cl();
+          Menu();
+          Console.SetCursorPosition(0, pos);
+          Console.WriteLine("->");
+
+          ConsoleKeyInfo key = Console.ReadKey();
+
+          if (key.Key == ConsoleKey.UpArrow && pos >= 4)
           {
-              pos = 8;
+              if (pos == 10)
+              {
+                  pos = 8;
+                  continue;
+              }
+
+              pos--;
               continue;
           }
 
-          pos--;
-          continue;
-      }
-
-      if (key.Key == ConsoleKey.DownArrow && pos <= 9)
-      {
-          if (pos == 8)
+          if (key.Key == ConsoleKey.DownArrow && pos <= 9)
           {
-              pos = 10;
+              if (pos == 8)
+              {
+                  pos = 10;
+                  continue;
+              }
+
+              pos++;
               continue;
           }
 
-          pos++;
-          continue;
+          if (key.Key == ConsoleKey.Enter)
+          {
+              if (pos == 3)
+              {
+
+                  while (!false)
+                  {
+                      CakeOrder.ParametersCake.Shape();
+                      Console.SetCursorPosition(0, pos);
+                      Console.WriteLine("->");
+
+                      ConsoleKeyInfo keyChape = Console.ReadKey();
+                      {
+                          // nav
+
+                          if (keyChape.Key == ConsoleKey.Enter)
+                          {
+
+                              if (pos == 3)
+                              {
+                                  CakeOrder.countPrice.OnePun = 4;
+                                  //parametersCake.Prepend("Shape: Circle");
+                                  CakePar[0] = "Shape: Circle";
+                                  break;
+                              }
+
+                              if (pos == 4)
+                              {
+                                  CakeOrder.countPrice.TwoPun = 4;
+                                  CakePar[0] = "Shape: Square";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 5)
+                              {
+                                  CakeOrder.countPrice.TwoPun = 5;
+                                  CakePar[0] = "Shape: Rectangle";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 6)
+                              {
+                                  CakeOrder.countPrice.TwoPun = 7;
+                                  CakePar[0] = "Shape: Heart";
+                                  pos = 3;
+                                  break;
+                              }
+                          }
+
+                          if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
+                          {
+                              pos--;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.DownArrow && pos <= 5)
+                          {
+                              pos++;
+                              continue;
+                          }
+
+                          if (pos <= 3)
+                          {
+                              pos = 3;
+                              continue;
+                          }
+
+                          if (pos >= 6)
+                          {
+                              pos = 6;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.Escape)
+                          {
+                              pos = 3;
+                              break;
+                          }
+
+
+                      }
+                      if (pos == 4)
+                      {
+
+
+                      }
+
+                  }
+
+              }
+
+              if (pos == 4)
+              {
+                  while (!false)
+                  {
+                      CakeOrder.ParametersCake.size();
+                      Console.SetCursorPosition(0, pos);
+                      Console.WriteLine("->");
+
+                      ConsoleKeyInfo keyChape = Console.ReadKey();
+                      {
+                          // nav
+
+                          if (keyChape.Key == ConsoleKey.Enter)
+                          {
+
+                              if (pos == 3)
+                              {
+                                  CakeOrder.countPrice.OnePun = 10;
+                                  CakePar[1] = "Size: Small";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 4)
+                              {
+                                  CakeOrder.countPrice.OnePun = 14;
+                                  CakePar[1] = "Size: Medium";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 5)
+                              {
+                                  CakeOrder.countPrice.OnePun = 24;
+                                  CakePar[1] = "Size: Huge";
+                                  pos = 3;
+                                  break;
+                              }
+                          }
+
+                          if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
+                          {
+                              pos--;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.DownArrow && pos <= 5)
+                          {
+                              pos++;
+                              continue;
+                          }
+
+                          if (pos <= 3)
+                          {
+                              pos = 3;
+                              continue;
+                          }
+
+                          if (pos >= 5)
+                          {
+                              pos = 5;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.Escape)
+                          {
+                              break;
+                          }
+                      }
+                  }
+
+              }
+
+              if (pos == 5)
+              {
+                  pos = 3;
+                  while (!false)
+                  {
+
+                      CakeOrder.ParametersCake.tasteOfCakes();
+                      Console.SetCursorPosition(0, pos);
+                      Console.WriteLine("->");
+
+                      ConsoleKeyInfo keyChape = Console.ReadKey();
+                      {
+                          // nav
+
+                          if (keyChape.Key == ConsoleKey.Enter)
+                          {
+
+                              if (pos == 3)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 2;
+                                  CakePar[2] = "Tastle of Cake: Vanilla";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 4)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 3;
+                                  CakePar[2] = "Tastle of Cake: Chocolate";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 5)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 3;
+                                  CakePar[2] = "Tastle of Cake: Caramel";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 6)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 5;
+                                  CakePar[2] = "Tastle of Cake: Berry";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 7)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 6;
+                                  CakePar[2] = "Tastle of Cake: Cocount";
+                                  pos = 3;
+                                  break;
+                              }
+                          }
+
+                          if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
+                          {
+                              pos--;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.DownArrow && pos <= 6)
+                          {
+                              pos++;
+                              continue;
+                          }
+
+                          if (pos <= 3)
+                          {
+                              pos = 3;
+                              continue;
+                          }
+
+                          if (pos >= 5)
+                          {
+                              pos = 5;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.Escape)
+                          {
+                              break;
+                          }
+
+
+                      }
+                  }
+              }
+
+              if (pos == 6)
+              {
+                  pos = 3;
+                  while (!false)
+                  {
+                      CakeOrder.ParametersCake.layers();
+                      Console.SetCursorPosition(0, pos);
+                      Console.WriteLine("->");
+
+                      ConsoleKeyInfo keyChape = Console.ReadKey();
+                      {
+                          // nav
+
+                          if (keyChape.Key == ConsoleKey.Enter)
+                          {
+
+                              if (pos == 3)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 2;
+                                  CakePar[3] = "Layers: 1 Korzh";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 4)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 4;
+                                  CakePar[3] = "Layers: 2 Korzh";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 5)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 6;
+                                  CakePar[3] = "Layers: 3 Korzh";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 6)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 7;
+                                  CakePar[3] = "Layers: 4 Korzh";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 7)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 8;
+                                  CakePar[3] = "Layers: 5 Korzh";
+                                  pos = 3;
+                                  break;
+                              }
+                          }
+
+                          if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
+                          {
+                              pos--;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.DownArrow && pos <= 6)
+                          {
+                              pos++;
+                              continue;
+                          }
+
+                          if (pos <= 3)
+                          {
+                              pos = 3;
+                              continue;
+                          }
+
+                          if (pos >= 7)
+                          {
+                              pos = 7;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.Escape)
+                          {
+                              break;
+                          }
+                      }
+                  }
+              }
+
+              if (pos == 7)
+              {
+                  pos = 3;
+                  while (!false)
+                  {
+                      CakeOrder.ParametersCake.glaze();
+                      Console.SetCursorPosition(0, pos);
+                      Console.WriteLine("->");
+
+                      ConsoleKeyInfo keyChape = Console.ReadKey();
+                      {
+                          // nav
+
+                          if (keyChape.Key == ConsoleKey.Enter)
+                          {
+
+                              if (pos == 3)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 2;
+                                  CakePar[4] = "Glaze: Yes";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 4)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 0;
+                                  CakePar[4] = "Glaze: No";
+                                  pos = 3;
+                                  break;
+                              }
+                          }
+
+                          if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
+                          {
+                              pos--;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.DownArrow && pos <= 4)
+                          {
+                              pos++;
+                              continue;
+                          }
+
+                          if (pos <= 3)
+                          {
+                              pos = 3;
+                              continue;
+                          }
+
+                          if (pos >= 4)
+                          {
+                              pos = 4;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.Escape)
+                          {
+                              break;
+                          }
+
+                      }
+                  }
+              }
+
+              if (pos == 8)
+              {
+                  pos = 3;
+                  while (!false)
+                  {
+                      CakeOrder.ParametersCake.decor();
+                      Console.SetCursorPosition(0, pos);
+                      Console.WriteLine("->");
+
+                      ConsoleKeyInfo keyChape = Console.ReadKey();
+                      {
+                          // nav
+
+                          if (keyChape.Key == ConsoleKey.Enter)
+                          {
+
+                              if (pos == 3)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 1;
+                                  CakePar[5] = "Decor: Chocolate";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 4)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 2;
+                                  CakePar[5] = "Decor: Berry";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 5)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 5;
+                                  CakePar[5] = "Decor: Cosmostars";
+                                  pos = 3;
+                                  break;
+                              }
+
+                              if (pos == 6)
+                              {
+                                  CakeOrder.countPrice.ThreePun = 8;
+                                  CakePar[5] = "Decor: Vanila";
+                                  pos = 3;
+                                  break;
+                              }
+                          }
+
+                          if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
+                          {
+                              pos--;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.DownArrow && pos <= 5)
+                          {
+                              pos++;
+                              continue;
+                          }
+
+                          if (pos <= 3)
+                          {
+                              pos = 3;
+                              continue;
+                          }
+
+                          if (pos >= 6)
+                          {
+                              pos = 6;
+                              continue;
+                          }
+
+                          if (keyChape.Key == ConsoleKey.Escape)
+                          {
+                              break;
+                          }
+                      }
+                  }
+              }
+
+
+              if (pos == 10)
+              {
+
+                  for (int j = 0; j < 6; j++)
+                  {
+                      CakeParForFile += CakePar[j];
+                  }
+
+                  File.AppendAllText("C:\\Users\\ogani\\RiderProjects\\CakeOrder\\order.txt",
+                      "\nFrom date: " + dateTime);
+                  File.AppendAllText("C:\\Users\\ogani\\RiderProjects\\CakeOrder\\order.txt",
+                      "\nPrices: " + Convert.ToString(CakeOrder.countPrice.Result) + "$");
+                  File.AppendAllText("C:\\Users\\ogani\\RiderProjects\\CakeOrder\\order.txt",
+                      "\nCake parameter: " + CakeParForFile + "\n");
+
+                  Cl();
+                  Console.WriteLine("If you wont order another cake press Y");
+                  ConsoleKeyInfo keyNext = Console.ReadKey();
+                  if (keyNext.Key == ConsoleKey.Y)
+                  {
+                      second = true;
+                      CakeOrder.countPrice.OnePun = 0;
+                      CakeOrder.countPrice.TwoPun = 0;
+                      CakeOrder.countPrice.ThreePun = 0;
+                      CakeOrder.countPrice.FourPun = 0;
+                      CakeOrder.countPrice.FivePun = 0;
+                      CakeOrder.countPrice.SixPun = 0;
+                      CakeOrder.countPrice.SevenPun = 0;
+                      CakeOrder.countPrice.Result = 0;
+                      
+                      for (int l1 = 0; l1 < CakePar.Length; l1++)
+                      {
+                          CakePar[l1] = null;
+                      }
+                  }
+                  else
+                  {
+                      break;
+                  }
+              }
+          }
       }
-
-      if (key.Key == ConsoleKey.Enter)
-      {
-          if (pos == 3)
-          {
-
-              while (!false)
-              {
-                  CakeOrder.ParametersCake.Shape();
-                  Console.SetCursorPosition(0, pos);
-                  Console.WriteLine("->");
-
-                  ConsoleKeyInfo keyChape = Console.ReadKey();
-                  {
-                      // nav
-
-                      if (keyChape.Key == ConsoleKey.Enter)
-                      {
-
-                          if (pos == 3)
-                          {
-                              CakeOrder.countPrice.OnePun = 4;
-                              //parametersCake.Prepend("Shape: Circle");
-                              CakePar[0] = "Shape: Circle";
-                              break;
-                          }
-
-                          if (pos == 4)
-                          {
-                              CakeOrder.countPrice.TwoPun = 4;
-                              CakePar[0] = "Shape: Square";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 5)
-                          {
-                              CakeOrder.countPrice.TwoPun = 5;
-                              CakePar[0] = "Shape: Rectangle";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 6)
-                          {
-                              CakeOrder.countPrice.TwoPun = 7;
-                              CakePar[0] = "Shape: Heart";
-                              pos = 3;
-                              break;
-                          }
-                      }
-
-                      if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
-                      {
-                          pos--;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.DownArrow && pos <= 5)
-                      {
-                          pos++;
-                          continue;
-                      }
-
-                      if (pos <= 3)
-                      {
-                          pos = 3;
-                          continue;
-                      }
-
-                      if (pos >= 6)
-                      {
-                          pos = 6;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.Escape)
-                      {
-                          pos = 3;
-                          break;
-                      }
-
-
-                  }
-                  if (pos == 4)
-                  {
-
-
-                  }
-
-              }
-
-          }
-
-          if (pos == 4)
-          {
-              while (!false)
-              {
-                  CakeOrder.ParametersCake.size();
-                  Console.SetCursorPosition(0, pos);
-                  Console.WriteLine("->");
-
-                  ConsoleKeyInfo keyChape = Console.ReadKey();
-                  {
-                      // nav
-
-                      if (keyChape.Key == ConsoleKey.Enter)
-                      {
-
-                          if (pos == 3)
-                          {
-                              CakeOrder.countPrice.OnePun = 10;
-                              CakePar[1] = "Size: Small";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 4)
-                          {
-                              CakeOrder.countPrice.OnePun = 14;
-                              CakePar[1] = "Size: Medium";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 5)
-                          {
-                              CakeOrder.countPrice.OnePun = 24;
-                              CakePar[1] = "Size: Huge";
-                              pos = 3;
-                              break;
-                          }
-                      }
-
-                      if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
-                      {
-                          pos--;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.DownArrow && pos <= 5)
-                      {
-                          pos++;
-                          continue;
-                      }
-
-                      if (pos <= 3)
-                      {
-                          pos = 3;
-                          continue;
-                      }
-
-                      if (pos >= 5)
-                      {
-                          pos = 5;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.Escape)
-                      {
-                          break;
-                      }
-                  }
-              }
-
-          }
-
-          if (pos == 5)
-          {
-              pos = 3;
-              while (!false)
-              {
-                  
-                  CakeOrder.ParametersCake.tasteOfCakes();
-                  Console.SetCursorPosition(0, pos);
-                  Console.WriteLine("->");
-
-                  ConsoleKeyInfo keyChape = Console.ReadKey();
-                  {
-                      // nav
-
-                      if (keyChape.Key == ConsoleKey.Enter)
-                      {
-
-                          if (pos == 3)
-                          {
-                              CakeOrder.countPrice.ThreePun = 2;
-                              CakePar[2] = "Tastle of Cake: Vanilla";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 4)
-                          {
-                              CakeOrder.countPrice.ThreePun = 3;
-                              CakePar[2] = "Tastle of Cake: Chocolate";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 5)
-                          {
-                              CakeOrder.countPrice.ThreePun = 3;
-                              CakePar[2] = "Tastle of Cake: Caramel";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 6)
-                          {
-                              CakeOrder.countPrice.ThreePun = 5;
-                              CakePar[2] = "Tastle of Cake: Berry";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 7)
-                          {
-                              CakeOrder.countPrice.ThreePun = 6;
-                              CakePar[2] = "Tastle of Cake: Cocount";
-                              pos = 3;
-                              break;
-                          }
-                      }
-
-                      if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
-                      {
-                          pos--;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.DownArrow && pos <= 6)
-                      {
-                          pos++;
-                          continue;
-                      }
-
-                      if (pos <= 3)
-                      {
-                          pos = 3;
-                          continue;
-                      }
-
-                      if (pos >= 5)
-                      {
-                          pos = 5;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.Escape)
-                      {
-                          break;
-                      }
-
-
-                  }
-              }
-          }
-
-          if (pos == 6)
-          {
-              pos = 3;
-              while (!false)
-              {
-                  CakeOrder.ParametersCake.layers();
-                  Console.SetCursorPosition(0, pos);
-                  Console.WriteLine("->");
-
-                  ConsoleKeyInfo keyChape = Console.ReadKey();
-                  {
-                      // nav
-
-                      if (keyChape.Key == ConsoleKey.Enter)
-                      {
-
-                          if (pos == 3)
-                          {
-                              CakeOrder.countPrice.ThreePun = 2;
-                              CakePar[3] = "Layers: 1 Korzh";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 4)
-                          {
-                              CakeOrder.countPrice.ThreePun = 4;
-                              CakePar[3] = "Layers: 2 Korzh";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 5)
-                          {
-                              CakeOrder.countPrice.ThreePun = 6;
-                              CakePar[3] = "Layers: 3 Korzh";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 6)
-                          {
-                              CakeOrder.countPrice.ThreePun = 7;
-                              CakePar[3] = "Layers: 4 Korzh";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 7)
-                          {
-                              CakeOrder.countPrice.ThreePun = 8;
-                              CakePar[3] = "Layers: 5 Korzh";
-                              pos = 3;
-                              break;
-                          }
-                      }
-
-                      if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
-                      {
-                          pos--;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.DownArrow && pos <= 6)
-                      {
-                          pos++;
-                          continue;
-                      }
-
-                      if (pos <= 3)
-                      {
-                          pos = 3;
-                          continue;
-                      }
-
-                      if (pos >= 7)
-                      {
-                          pos = 7;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.Escape)
-                      {
-                          break;
-                      }
-                  }
-              }
-          }
-
-          if (pos == 7)
-          {
-              pos = 3;
-              while (!false)
-              {
-                  CakeOrder.ParametersCake.glaze();
-                  Console.SetCursorPosition(0, pos);
-                  Console.WriteLine("->");
-
-                  ConsoleKeyInfo keyChape = Console.ReadKey();
-                  {
-                      // nav
-
-                      if (keyChape.Key == ConsoleKey.Enter)
-                      {
-
-                          if (pos == 3)
-                          {
-                              CakeOrder.countPrice.ThreePun = 2;
-                              CakePar[4] = "Glaze: Yes";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 4)
-                          {
-                              CakeOrder.countPrice.ThreePun = 0;
-                              CakePar[4] = "Glaze: No";
-                              pos = 3;
-                              break;
-                          }
-                      }
-
-                      if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
-                      {
-                          pos--;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.DownArrow && pos <= 4)
-                      {
-                          pos++;
-                          continue;
-                      }
-
-                      if (pos <= 3)
-                      {
-                          pos = 3;
-                          continue;
-                      }
-
-                      if (pos >= 4)
-                      {
-                          pos = 4;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.Escape)
-                      {
-                          break;
-                      }
-
-                  }
-              }
-          }
-
-          if (pos == 8)
-          {
-              pos = 3;
-              while (!false)
-              {
-                  CakeOrder.ParametersCake.decor();
-                  Console.SetCursorPosition(0, pos);
-                  Console.WriteLine("->");
-
-                  ConsoleKeyInfo keyChape = Console.ReadKey();
-                  {
-                      // nav
-
-                      if (keyChape.Key == ConsoleKey.Enter)
-                      {
-
-                          if (pos == 3)
-                          {
-                              CakeOrder.countPrice.ThreePun = 1;
-                              CakePar[5] = "Decor: Chocolate";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 4)
-                          {
-                              CakeOrder.countPrice.ThreePun = 2;
-                              CakePar[5] = "Decor: Berry";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 5)
-                          {
-                              CakeOrder.countPrice.ThreePun = 5;
-                              CakePar[5] = "Decor: Cosmostars";
-                              pos = 3;
-                              break;
-                          }
-
-                          if (pos == 6)
-                          {
-                              CakeOrder.countPrice.ThreePun = 8;
-                              CakePar[5] = "Decor: Vanila";
-                              pos = 3;
-                              break;
-                          }
-                      }
-
-                      if (keyChape.Key == ConsoleKey.UpArrow && pos >= 4)
-                      {
-                          pos--;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.DownArrow && pos <= 5)
-                      {
-                          pos++;
-                          continue;
-                      }
-
-                      if (pos <= 3)
-                      {
-                          pos = 3;
-                          continue;
-                      }
-
-                      if (pos >= 6)
-                      {
-                          pos = 6;
-                          continue;
-                      }
-
-                      if (keyChape.Key == ConsoleKey.Escape)
-                      {
-                          break;
-                      }
-                  }
-              }
-          }
-      }
-  }
+  } while (second == true);
+  

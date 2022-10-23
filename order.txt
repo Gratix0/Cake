@@ -1,0 +1,9 @@
+
+
+From date: 23.10.2022 22:30:52
+Prices: 36$
+Cake parameter: Shape: SquareSize: HugeTastle of Cake: CaramelLayers: 3 KorzhGlaze: YesDecor: Vanila
+
+From date: 23.10.2022 22:30:52
+Prices: 31$
+Cake parameter: Shape: SquareSize: HugeTastle of Cake: CaramelLayers: 3 KorzhGlaze: YesDecor: VanilaShape: RectangleSize: HugeTastle of Cake: BerryLayers: 5 KorzhGlaze: YesDecor: Vanila
